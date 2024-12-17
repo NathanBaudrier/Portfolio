@@ -1,7 +1,7 @@
 .cv {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
     row-gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,12 +13,13 @@
 }
 
 .titles {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column: 1 / 3;
     grid-row: 1;
+    justify-content: center;
     align-content: center;
     text-align: center;
     width: 19cm;
+    height: 2.85cm;
     border: 3px;
     border-style: solid;
     border-color: black;
@@ -37,11 +38,12 @@
 }
 
 .profile {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column: 1 / 3;
     grid-row-start: 2;
     grid-row-end: 3;
     display: grid;
+    width: 19cm;
+    height: 8cm;
     grid-template-columns: auto 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
     border: 3px;
@@ -62,27 +64,38 @@
     grid-column-end: 4;
     grid-row: 1;
     background-color: #757AB2;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
     border-bottom: 3px;
     border-style: solid;
     border-color: black;
+    height: 1.4cm;
+    align-content: center;
 }
 
 #profile-photo {
     grid-column: 1;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row: 2 / 4; 
     max-width: 50%;
     max-height: 50%;
     border: 2px;
     border-style: solid;
     border-color: black;
     margin-left: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .coordinates {
     grid-column: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row: 2 / 4;
+}
+
+.coordinates li {
+    list-style-type: none;
+    margin-left: 5px;
+    margin-top: 15px;
 }
 
 .links {
@@ -90,8 +103,35 @@
     grid-row: 2;
 }
 
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links li {
+    margin-left: 5px;
+}
+
+.links li::marker {
+    color: #757AB2;
+}
+
 .languages {
     grid-column: 3;
     grid-row: 3;
 }
+
+.languages li {
+    list-style-type: none;
+}
+
+.lang {
+    color: #757AB2;
+}
+
+
 
