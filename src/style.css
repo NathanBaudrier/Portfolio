@@ -1,21 +1,44 @@
-body {
-    margin: 0;
-}
-
 .navbar {
     display: flex;
+    background-color: black;
+    position: fixed;
     align-items: center;
     justify-content: center;
-    list-style-type: none;
-    background-color: #979BC4;
-    height: 50px;
-    gap: 20px;
-    margin: 0;
-    padding-left: 0px;
+    gap: 6em;
+    width: 100%;
+    height: 5em;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+@keyframes shrink {
+    from {
+        margin-top: 0;
+        width: 100%;
+    }
+    to {
+        width: 50%;
+        margin-top: 1.2em;
+    }
+}
+
+.navbar.scrolled {
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    opacity: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.2s ease-in-out;
+    animation: shrink 0.5s forwards;
 }
 
 .navbar a {
-    position: relative;
-    color: black;
+    color: whitesmoke;
     text-decoration: none;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1em;
 }
